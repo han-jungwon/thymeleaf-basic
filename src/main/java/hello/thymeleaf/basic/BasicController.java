@@ -83,6 +83,18 @@ public class BasicController {
         return "basic/literal";
     }
 
+    @GetMapping("/operation")
+    public String operation(Model model) {
+        model.addAttribute("nullData", null);
+        model.addAttribute("data", "Spring!");
+        return "basic/operation";
+    }
+
+    @GetMapping("/attribute")
+    public String attribute() {
+        return "basic/attribute";
+    }
+
     @GetMapping("/each")
     public String each(Model model) {
         addUsers(model);
@@ -93,6 +105,12 @@ public class BasicController {
     public String condition(Model model) {
         addUsers(model);
         return "basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
     }
 
     private void addUsers(Model model) {
